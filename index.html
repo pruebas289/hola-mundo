@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo - Página de Pruebas</title>
+    <title>🌍 Hola Mundo en Todos los Idiomas</title>
     <style>
         * {
             margin: 0;
@@ -14,69 +14,227 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #fff;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
             text-align: center;
-            padding: 20px;
+            margin-bottom: 50px;
+            animation: fadeDown 1s ease;
         }
 
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            animation: fadeIn 1s ease-in-out;
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        header h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
         }
 
-        p {
+        header p {
             font-size: 1.2rem;
             opacity: 0.9;
+        }
+
+        .emoji-globe {
+            font-size: 4rem;
+            display: inline-block;
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .flag {
+            font-size: 2.8rem;
+            display: block;
             margin-bottom: 10px;
         }
 
-        .emoji {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-            animation: wave 2s infinite;
+        .idioma {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.75;
+            margin-bottom: 8px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .saludo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(20deg); }
-            75% { transform: rotate(-20deg); }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.85;
+            font-size: 0.95rem;
         }
+
+        /* Retrasos escalonados para la animación */
+        .card:nth-child(1)  { animation-delay: 0.05s; }
+        .card:nth-child(2)  { animation-delay: 0.10s; }
+        .card:nth-child(3)  { animation-delay: 0.15s; }
+        .card:nth-child(4)  { animation-delay: 0.20s; }
+        .card:nth-child(5)  { animation-delay: 0.25s; }
+        .card:nth-child(6)  { animation-delay: 0.30s; }
+        .card:nth-child(7)  { animation-delay: 0.35s; }
+        .card:nth-child(8)  { animation-delay: 0.40s; }
+        .card:nth-child(9)  { animation-delay: 0.45s; }
+        .card:nth-child(10) { animation-delay: 0.50s; }
+        .card:nth-child(11) { animation-delay: 0.55s; }
+        .card:nth-child(12) { animation-delay: 0.60s; }
+        .card:nth-child(13) { animation-delay: 0.65s; }
+        .card:nth-child(14) { animation-delay: 0.70s; }
+        .card:nth-child(15) { animation-delay: 0.75s; }
+        .card:nth-child(16) { animation-delay: 0.80s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <span class="emoji">👋</span>
+
+    <header>
+        <span class="emoji-globe">🌍</span>
         <h1>¡Hola Mundo!</h1>
-        <p>Esta es mi primera página de pruebas</p>
-        <p>🚀 Subida a GitHub con éxito</p>
-    </div>
+        <p>El mismo saludo en diferentes idiomas del planeta</p>
+    </header>
+
+    <main class="grid">
+        <div class="card">
+            <span class="flag">🇪🇸</span>
+            <div class="idioma">Español</div>
+            <div class="saludo">¡Hola Mundo!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇬🇧</span>
+            <div class="idioma">English</div>
+            <div class="saludo">Hello World!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇫🇷</span>
+            <div class="idioma">Français</div>
+            <div class="saludo">Bonjour le Monde!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇩🇪</span>
+            <div class="idioma">Deutsch</div>
+            <div class="saludo">Hallo Welt!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇮🇹</span>
+            <div class="idioma">Italiano</div>
+            <div class="saludo">Ciao Mondo!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇵🇹</span>
+            <div class="idioma">Português</div>
+            <div class="saludo">Olá Mundo!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇯🇵</span>
+            <div class="idioma">日本語</div>
+            <div class="saludo">こんにちは世界！</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇨🇳</span>
+            <div class="idioma">中文</div>
+            <div class="saludo">你好，世界！</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇰🇷</span>
+            <div class="idioma">한국어</div>
+            <div class="saludo">안녕하세요 세계!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇷🇺</span>
+            <div class="idioma">Русский</div>
+            <div class="saludo">Привет, мир!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇸🇦</span>
+            <div class="idioma">العربية</div>
+            <div class="saludo">مرحبا بالعالم!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇮🇳</span>
+            <div class="idioma">हिन्दी</div>
+            <div class="saludo">नमस्ते दुनिया!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇬🇷</span>
+            <div class="idioma">Ελληνικά</div>
+            <div class="saludo">Γειά σου Κόσμε!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇹🇷</span>
+            <div class="idioma">Türkçe</div>
+            <div class="saludo">Merhaba Dünya!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇸🇪</span>
+            <div class="idioma">Svenska</div>
+            <div class="saludo">Hej Världen!</div>
+        </div>
+        <div class="card">
+            <span class="flag">🇺🇦</span>
+            <div class="idioma">Українська</div>
+            <div class="saludo">Привіт, Світе!</div>
+        </div>
+    </main>
+
+    <footer>
+        🚀 Hecho con ❤️ y subido a GitHub Pages
+    </footer>
+
 </body>
 </html>
