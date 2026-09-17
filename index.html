@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr. Ma-Rez | Mariscos Frescos y Sabor del Mar</title>
-    <meta name="description" content="Los mejores mariscos frescos, caldos, camarones y cocteles. Mr. Ma-Rez Mariscos.">
+    <title>Mr. Ma-Rez | Mariscos Frescos · Sabor del Mar</title>
+    <meta name="description" content="Los mejores mariscos frescos: camarones, caldos, cocteles, mojarras y más. Mr. Ma-Rez Mariscos.">
     <link rel="icon" type="image/png" href="imagenes/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-wave"></div>
+            <span>🦐 Mr. Ma-Rez</span>
+        </div>
+    </div>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span>📍 Tu dirección aquí</span>
+            <span>📞 (XXX) XXX-XXXX</span>
+            <span class="topbar-hours">🕒 Lun-Dom 9:00 AM - 10:00 PM</span>
+        </div>
+    </div>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
@@ -24,32 +43,42 @@
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <div class="nav-toggle" id="navToggle">
+            <a href="#contacto" class="nav-cta">Reservar</a>
+            <div class="nav-toggle" id="navToggle" aria-label="Menú">
                 <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
-    <!-- ===== HERO CON PARALLAX ===== -->
+    <!-- ===== HERO ===== -->
     <header class="hero" id="inicio">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
+        <div class="hero-bubbles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
         <div class="hero-content">
-            <img src="imagenes/logo.png" alt="Mr. Ma-Rez" class="hero-logo" onerror="this.style.display='none';">
+            <span class="hero-badge">🌊 Marisquería · Tradición picosa</span>
             <h1 class="hero-title">Mr. Ma-Rez</h1>
-            <p class="hero-subtitle">Mariscos frescos · Sabor del mar · Tradición picosa</p>
+            <p class="hero-subtitle">El sabor auténtico del mar en cada bocado</p>
             <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">Ver Menú</a>
-                <a href="#contacto" class="btn btn-outline">Reservar Mesa</a>
+                <a href="#menu" class="btn btn-primary">🍤 Ver Menú</a>
+                <a href="#contacto" class="btn btn-outline">📅 Reservar Mesa</a>
+            </div>
+            <div class="hero-info">
+                <div><strong>+20</strong><span>Años</span></div>
+                <div><strong>50+</strong><span>Platillos</span></div>
+                <div><strong>4.9★</strong><span>Reseñas</span></div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <a href="#about" class="scroll-indicator" aria-label="Bajar">
             <span></span>
-        </div>
+        </a>
     </header>
 
     <!-- ===== SOBRE NOSOTROS ===== -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
@@ -57,23 +86,16 @@
                     <h2>El auténtico sabor de la <span class="highlight">marisquería</span></h2>
                     <p>En <strong>Mr. Ma-Rez</strong> seleccionamos diariamente los mejores mariscos frescos para ofrecerte una experiencia única. Nuestros caldos, camarones y cocteles son preparados con recetas tradicionales y ese toque picante que nos caracteriza.</p>
                     <p>Ven a disfrutar de un ambiente familiar, porciones generosas y el sabor inconfundible del mar.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-num">+20</span>
-                            <span class="stat-label">Años de experiencia</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-num">50+</span>
-                            <span class="stat-label">Platillos</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-num">100%</span>
-                            <span class="stat-label">Fresco</span>
-                        </div>
+                    <div class="about-features">
+                        <div class="feature"><span>🐟</span><strong>Fresco del día</strong></div>
+                        <div class="feature"><span>🌶️</span><strong>Sabor picante</strong></div>
+                        <div class="feature"><span>👨‍🍳</span><strong>Receta casera</strong></div>
+                        <div class="feature"><span>🍺</span><strong>Micheladas</strong></div>
                     </div>
                 </div>
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=800" alt="Camarones frescos" loading="lazy">
+                    <div class="about-badge">🦐 100% Fresco</div>
                 </div>
             </div>
         </div>
@@ -97,8 +119,7 @@
                 <p>Descubre nuestra selección de especialidades del mar</p>
             </div>
 
-            <!-- Tabs -->
-            <div class="menu-tabs">
+            <div class="menu-tabs" id="menuTabs">
                 <button class="tab active" data-tab="camarones">🦐 Camarones</button>
                 <button class="tab" data-tab="mojarras">🐟 Mojarras</button>
                 <button class="tab" data-tab="caldos">🍲 Caldos</button>
@@ -130,106 +151,40 @@
             <div class="menu-content" id="mojarras">
                 <p class="menu-note">Guarnición papas a la francesa + ensalada + arroz (depende su tamaño)</p>
                 <div class="menu-grid">
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarras Fritas</h3>
-                        <div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra Gratinada</h3>
-                        <div class="sizes"><span>CH $250</span><span>MED $260</span><span>GDE $275</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra a la Diabla</h3>
-                        <div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra Enchipotlada</h3>
-                        <div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra al Ajillo</h3>
-                        <div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra Mango Habanero</h3>
-                        <div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Mojarra Rellena de Mariscos</h3>
-                        <div class="sizes"><span>CH $285</span><span>MED $310</span><span>GDE $340</span></div>
-                    </div>
+                    <div class="menu-item with-sizes"><h3>Mojarras Fritas</h3><div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra Gratinada</h3><div class="sizes"><span>CH $250</span><span>MED $260</span><span>GDE $275</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra a la Diabla</h3><div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra Enchipotlada</h3><div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra al Ajillo</h3><div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra Mango Habanero</h3><div class="sizes"><span>CH $230</span><span>MED $250</span><span>GDE $265</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Mojarra Rellena de Mariscos</h3><div class="sizes"><span>CH $285</span><span>MED $310</span><span>GDE $340</span></div></div>
                 </div>
             </div>
 
             <!-- CALDOS -->
             <div class="menu-content" id="caldos">
                 <div class="menu-grid">
-                    <div class="menu-item with-sizes">
-                        <h3>Sudador de Tarro <small>(Picoso)</small></h3>
-                        <div class="sizes"><span>GDE $140</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Caldo de Mariscos <small>(Almeja, Pulpo, Calamar, Pescado, Jaiba, Camarón, Surimi)</small></h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Caldo de Camarón</h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $130</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Cazuela Marisco "De la Casa Picoso"</h3>
-                        <div class="sizes"><span>GDE $175</span><span>CHICA $135</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Caldo de Pescado</h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Pozole de Mariscos</h3>
-                        <div class="sizes"><span>GDE $170</span><span>CHICA $130</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Cazuela Hawaiana <small>(Piña, tocino, queso)</small></h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Caldo de Camarón y Pulpo</h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Caldo de Camarón Jaiba</h3>
-                        <div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div>
-                    </div>
+                    <div class="menu-item with-sizes"><h3>Sudador de Tarro <small>(Picoso)</small></h3><div class="sizes"><span>GDE $140</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Mariscos <small>(Almeja, Pulpo, Calamar, Pescado, Jaiba, Camarón, Surimi)</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Camarón</h3><div class="sizes"><span>GDE $160</span><span>CHICA $130</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Cazuela Marisco "De la Casa Picoso"</h3><div class="sizes"><span>GDE $175</span><span>CHICA $135</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Pescado</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Pozole de Mariscos</h3><div class="sizes"><span>GDE $170</span><span>CHICA $130</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Cazuela Hawaiana <small>(Piña, tocino, queso)</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Camarón y Pulpo</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Camarón Jaiba</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                 </div>
             </div>
 
             <!-- COCTELES -->
             <div class="menu-content" id="cocteles">
                 <div class="menu-grid">
-                    <div class="menu-item with-sizes">
-                        <h3>Coctel de Camarón</h3>
-                        <div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Coctel Tricampechano</h3>
-                        <div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Coctel Camarón y Pulpo</h3>
-                        <div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Coctel Ostión</h3>
-                        <div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Coctel Pulpo</h3>
-                        <div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div>
-                    </div>
-                    <div class="menu-item with-sizes">
-                        <h3>Vuelve a la Vida</h3>
-                        <div class="sizes"><span>GDE $190</span></div>
-                    </div>
+                    <div class="menu-item with-sizes"><h3>Coctel de Camarón</h3><div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Coctel Tricampechano</h3><div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Coctel Camarón y Pulpo</h3><div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Coctel Ostión</h3><div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Coctel Pulpo</h3><div class="sizes"><span>CH $130</span><span>MD $160</span><span>GDE $180</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Vuelve a la Vida</h3><div class="sizes"><span>GDE $190</span></div></div>
                 </div>
             </div>
 
@@ -352,12 +307,24 @@
                 <p>Una muestra de lo que encontrarás en Mr. Ma-Rez</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=600" alt="Camarones" loading="lazy"><div class="overlay"><span>Camarones</span></div></div>
+                <div class="gallery-item large"><img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=800" alt="Camarones" loading="lazy"><div class="overlay"><span>Camarones</span></div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=600" alt="Coctel" loading="lazy"><div class="overlay"><span>Cocteles</span></div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600" alt="Mariscos" loading="lazy"><div class="overlay"><span>Mariscos</span></div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600" alt="Caldos" loading="lazy"><div class="overlay"><span>Caldos</span></div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600" alt="Micheladas" loading="lazy"><div class="overlay"><span>Micheladas</span></div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizzas" loading="lazy"><div class="overlay"><span>Pizzas</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <h2>¿Listo para probar el mejor sabor del mar?</h2>
+            <p>Reserva tu mesa hoy y vive la experiencia Mr. Ma-Rez</p>
+            <div class="cta-buttons">
+                <a href="tel:+525500000000" class="btn btn-primary">📞 Llamar ahora</a>
+                <a href="#menu" class="btn btn-outline">🍽️ Ver Menú</a>
             </div>
         </div>
     </section>
@@ -370,6 +337,11 @@
                     <img src="imagenes/logo.png" alt="Mr. Ma-Rez" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <h3 class="footer-logo-text" style="display:none;">Mr. Ma-Rez Mariscos</h3>
                     <p>Tradición, sabor y frescura del mar en cada platillo. Te esperamos con la mejor atención.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="WhatsApp">💬</a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
@@ -395,6 +367,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/525500000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        💬
+    </a>
 
     <!-- Botón volver arriba -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>

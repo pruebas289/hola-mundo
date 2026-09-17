@@ -1,3 +1,11 @@
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => preloader.classList.add('hidden'), 600);
+    }
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
@@ -21,7 +29,6 @@ navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Cerrar al hacer clic en un enlace
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navToggle.classList.remove('active');
@@ -41,7 +48,8 @@ tabs.forEach(tab => {
         contents.forEach(c => c.classList.remove('active'));
 
         tab.classList.add('active');
-        document.getElementById(target).classList.add('active');
+        const targetContent = document.getElementById(target);
+        if (targetContent) targetContent.classList.add('active');
     });
 });
 
@@ -66,15 +74,14 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Aplicar animación a elementos
-document.querySelectorAll('.menu-item, .gallery-item, .stat').forEach((el, i) => {
+document.querySelectorAll('.menu-item, .gallery-item, .feature, .stat').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = `opacity 0.6s ease ${i * 0.03}s, transform 0.6s ease ${i * 0.03}s`;
     observer.observe(el);
 });
 
-// ===== EFECTO PARALLAX SUAVE EN HERO =====
+// ===== PARALLAX SUAVE EN HERO =====
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
@@ -82,6 +89,19 @@ window.addEventListener('scroll', () => {
         heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
         heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
     }
+});
+
+// ===== SCROLL SUAVE PARA ANCLAS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
 });
 
 console.log('🦐 Mr. Ma-Rez Mariscos - Página cargada correctamente');
