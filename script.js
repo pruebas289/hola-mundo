@@ -1,37 +1,40 @@
 // ===== PRELOADER =====
-window.addEventListener('load', () => {
+(function() {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        setTimeout(() => preloader.classList.add('hidden'), 500);
-    }
-});
+    const fill = document.getElementById('preloaderFill');
+    if (!preloader) return;
 
-// ===== NAVBAR + BACK TO TOP =====
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15 + 5;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 400);
+        }
+        if (fill) fill.style.width = progress + '%';
+    }, 150);
+
+    // Fallback
+    setTimeout(() => {
+        clearInterval(interval);
+        preloader.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 3500);
+})();
+
+// ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
-
 let ticking = false;
 
 function handleScroll() {
     const scrollY = window.scrollY;
-
-    if (scrollY > 60) {
-        navbar.classList.add('scrolled');
-        if (backToTop) backToTop.classList.add('show');
-    } else {
-        navbar.classList.remove('scrolled');
-        if (backToTop) backToTop.classList.remove('show');
-    }
-
-    // Parallax suave solo en desktop
-    if (window.innerWidth > 768) {
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent && scrollY < window.innerHeight) {
-            heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
-            heroContent.style.opacity = Math.max(0, 1 - (scrollY / window.innerHeight) * 0.8);
-        }
-    }
-
+    if (navbar) navbar.classList.toggle('scrolled', scrollY > 40);
+    if (backToTop) backToTop.classList.toggle('show', scrollY > 400);
     ticking = false;
 }
 
@@ -42,21 +45,20 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// ===== MENÚ MÓVIL (CON OVERLAY) =====
+// ===== MENÚ MÓVIL =====
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navOverlay = document.getElementById('navOverlay');
 
 function openMenu() {
-    navToggle.classList.add('active');
-    navMenu.classList.add('active');
+    if (navToggle) navToggle.classList.add('active');
+    if (navMenu) navMenu.classList.add('active');
     if (navOverlay) navOverlay.classList.add('active');
     document.body.classList.add('no-scroll');
 }
-
 function closeMenu() {
-    navToggle.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (navToggle) navToggle.classList.remove('active');
+    if (navMenu) navMenu.classList.remove('active');
     if (navOverlay) navOverlay.classList.remove('active');
     document.body.classList.remove('no-scroll');
 }
@@ -64,30 +66,18 @@ function closeMenu() {
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (navMenu.classList.contains('active')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
+        if (navMenu.classList.contains('active')) closeMenu();
+        else openMenu();
     });
 
-    // Cerrar al hacer clic en un enlace
     navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMenu();
-        });
+        link.addEventListener('click', closeMenu);
     });
 
-    // Cerrar al hacer clic en el overlay
-    if (navOverlay) {
-        navOverlay.addEventListener('click', closeMenu);
-    }
+    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
 
-    // Cerrar con tecla Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            closeMenu();
-        }
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
     });
 }
 
@@ -98,16 +88,11 @@ const contents = document.querySelectorAll('.menu-content');
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         const target = tab.dataset.tab;
-
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
-
         tab.classList.add('active');
-        const targetContent = document.getElementById(target);
-        if (targetContent) {
-            targetContent.classList.add('active');
-        }
-
+        const content = document.getElementById(target);
+        if (content) content.classList.add('active');
         tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     });
 });
@@ -145,4 +130,4 @@ window.addEventListener('resize', () => {
     }, 250);
 });
 
-console.log('🦐 Mr. Ma-Rez Mariscos - Cargado correctamente');
+console.log('🦐 Mr. Ma-Rez · Listo');

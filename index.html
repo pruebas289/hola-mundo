@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0a3d62">
-    <title>Mr. Ma-Rez | Mariscos Frescos · Sabor del Mar</title>
-    <meta name="description" content="Los mejores mariscos frescos: camarones, caldos, cocteles, mojarras y más. Mr. Ma-Rez Mariscos.">
+    <meta name="theme-color" content="#0a2540">
+    <title>Mr. Ma-Rez · Marisquería del Pacífico</title>
+    <meta name="description" content="Mariscos frescos del Pacífico. Camarones, caldos, cocteles y la mejor tradición picosa. Mr. Ma-Rez Marisquería.">
     <link rel="icon" type="image/png" href="imagenes/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ===== PRELOADER ===== -->
     <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-wave"></div>
-            <span>🦐 Mr. Ma-Rez</span>
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="imagenes/logo.png" alt="Mr. Ma-Rez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="preloader-logo-text" style="display:none;">Mr. Ma-Rez</span>
+            </div>
+            <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderFill"></div></div>
+            <p class="preloader-tag">Marisquería del Pacífico · Desde 1998</p>
         </div>
     </div>
 
-    <!-- ===== TOP BAR ===== -->
+    <!-- ===== TOPBAR ===== -->
     <div class="topbar">
         <div class="container topbar-inner">
             <span>📍 Tu dirección aquí</span>
+            <span class="topbar-divider">·</span>
             <span>📞 (XXX) XXX-XXXX</span>
-            <span class="topbar-hours">🕒 Lun-Dom 9:00 AM - 10:00 PM</span>
+            <span class="topbar-divider topbar-hide">·</span>
+            <span class="topbar-hide">🕒 Lun–Dom · 9:00 AM – 10:00 PM</span>
         </div>
     </div>
 
@@ -38,100 +44,146 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#inicio" class="nav-logo">
-                <img src="imagenes/logo.png" alt="Mr. Ma-Rez Mariscos" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-text-fallback" style="display:none;">Mr. Ma-Rez</span>
+                <img src="imagenes/logo.png" alt="Mr. Ma-Rez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">Mr. Ma-Rez</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#menu">Menú</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <a href="#contacto" class="nav-cta">Reservar</a>
-            <div class="nav-toggle" id="navToggle" aria-label="Abrir menú" role="button" tabindex="0">
+            <a href="#contacto" class="nav-cta">Reservar mesa</a>
+            <div class="nav-toggle" id="navToggle" aria-label="Menú" role="button" tabindex="0">
                 <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <!-- ===== HERO ===== -->
-    <header class="hero" id="inicio">
-        <div class="hero-bg"></div>
+    <section class="hero" id="inicio">
+        <div class="hero-bg" id="heroBg"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-bubbles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span>
+        <div class="hero-particles">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
-        <div class="hero-content">
-            <span class="hero-badge">🌊 Marisquería · Tradición picosa</span>
-            <h1 class="hero-title">Mr. Ma-Rez</h1>
-            <p class="hero-subtitle">El sabor auténtico del mar en cada bocado</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">🍤 Ver Menú</a>
-                <a href="#contacto" class="btn btn-outline">📅 Reservar Mesa</a>
-            </div>
-            <div class="hero-info">
-                <div><strong>+20</strong><span>Años</span></div>
-                <div><strong>50+</strong><span>Platillos</span></div>
-                <div><strong>4.9★</strong><span>Reseñas</span></div>
-            </div>
-        </div>
-        <a href="#about" class="scroll-indicator" aria-label="Bajar">
-            <span></span>
-        </a>
-    </header>
 
-    <!-- ===== SOBRE NOSOTROS ===== -->
-    <section class="about" id="about">
+        <div class="hero-content">
+            <p class="hero-eyebrow">· Marisquería del Pacífico ·</p>
+            <h1 class="hero-title">
+                <span class="line">El sabor</span>
+                <span class="line italic">del mar</span>
+                <span class="line">en tu mesa.</span>
+            </h1>
+            <p class="hero-subtitle">Camarones frescos, caldos humeantes y esa tradición picosa que solo Mr. Ma-Rez sabe preparar.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Ver el menú</a>
+                <a href="#contacto" class="btn btn-outline">Reservar mesa</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Descubre</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE ELEGANTE ===== -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>Camarones</span><span class="dot">·</span>
+            <span>Caldos</span><span class="dot">·</span>
+            <span>Cocteles</span><span class="dot">·</span>
+            <span>Mojarras</span><span class="dot">·</span>
+            <span>Micheladas</span><span class="dot">·</span>
+            <span>Mariscos frescos</span><span class="dot">·</span>
+            <span>Camarones</span><span class="dot">·</span>
+            <span>Caldos</span><span class="dot">·</span>
+            <span>Cocteles</span><span class="dot">·</span>
+            <span>Mojarras</span><span class="dot">·</span>
+            <span>Micheladas</span><span class="dot">·</span>
+            <span>Mariscos frescos</span><span class="dot">·</span>
+        </div>
+    </div>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="nosotros" id="nosotros">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="section-tag">Desde el mar a tu mesa</span>
-                    <h2>El auténtico sabor de la <span class="highlight">marisquería</span></h2>
-                    <p>En <strong>Mr. Ma-Rez</strong> seleccionamos diariamente los mejores mariscos frescos para ofrecerte una experiencia única. Nuestros caldos, camarones y cocteles son preparados con recetas tradicionales y ese toque picante que nos caracteriza.</p>
-                    <p>Ven a disfrutar de un ambiente familiar, porciones generosas y el sabor inconfundible del mar.</p>
-                    <div class="about-features">
-                        <div class="feature"><span>🐟</span><strong>Fresco del día</strong></div>
-                        <div class="feature"><span>🌶️</span><strong>Sabor picante</strong></div>
-                        <div class="feature"><span>👨‍🍳</span><strong>Receta casera</strong></div>
-                        <div class="feature"><span>🍺</span><strong>Micheladas</strong></div>
+            <div class="nosotros-grid">
+                <div class="nosotros-images">
+                    <div class="img-main">
+                        <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=900&q=80" alt="Camarones frescos">
+                    </div>
+                    <div class="img-small">
+                        <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600&q=80" alt="Mariscos">
+                    </div>
+                    <div class="nosotros-badge">
+                        <span class="badge-number">25</span>
+                        <span class="badge-label">Años de<br>tradición</span>
                     </div>
                 </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=800" alt="Camarones frescos" loading="lazy">
-                    <div class="about-badge">🦐 100% Fresco</div>
+
+                <div class="nosotros-text">
+                    <p class="eyebrow">· Nuestra historia ·</p>
+                    <h2 class="section-title">
+                        Mariscos <em class="italic">frescos</em>,<br>
+                        tradición <em class="italic">picosa</em>.
+                    </h2>
+                    <p class="lead">En Mr. Ma-Rez seleccionamos cada mañana los mejores mariscos del Pacífico. Recetas de familia, sazón inconfundible y esa atención que te hace volver.</p>
+                    <p>Desde 1998 servimos caldos humeantes, camarones preparados al momento y micheladas que se han vuelto leyenda en la ciudad. Cada platillo es preparado con la misma pasión del primer día.</p>
+
+                    <div class="nosotros-features">
+                        <div class="feature">
+                            <div class="feature-icon">🐟</div>
+                            <div><strong>Fresco del día</strong><span>Directo del Pacífico</span></div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🌶️</div>
+                            <div><strong>Sazón picosa</strong><span>Receta familiar</span></div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <div><strong>Hecho al momento</strong><span>Sin prisas</span></div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🍺</div>
+                            <div><strong>Micheladas</strong><span>De la casa</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== PARALLAX 1 ===== -->
-    <section class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=1920');">
+    <section class="parallax" style="background-image: url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=1920&q=80');">
         <div class="parallax-overlay"></div>
         <div class="parallax-content">
-            <h2>"El mar en cada bocado"</h2>
-            <p>Camarones · Pulpo · Ostión · Pescado fresco</p>
+            <p class="eyebrow light">· Del mar a tu mesa ·</p>
+            <h2 class="parallax-title">"Cada bocado<br>es un <em class="italic">recuerdo</em>."</h2>
+            <div class="parallax-line"></div>
         </div>
     </section>
 
     <!-- ===== MENÚ ===== -->
-    <section class="menu-section" id="menu">
+    <section class="menu" id="menu">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Nuestro Menú</span>
-                <h2>Platillos que enamoran</h2>
-                <p>Descubre nuestra selección de especialidades del mar</p>
+            <div class="menu-header">
+                <p class="eyebrow center">· Nuestra carta ·</p>
+                <h2 class="section-title center">Platillos que <em class="italic">enamoran</em></h2>
+                <p class="menu-sub">Selecciona una categoría y descubre nuestra especialidad</p>
             </div>
 
             <div class="menu-tabs" id="menuTabs">
-                <button class="tab active" data-tab="camarones">🦐 Camarones</button>
-                <button class="tab" data-tab="mojarras">🐟 Mojarras</button>
-                <button class="tab" data-tab="caldos">🍲 Caldos</button>
-                <button class="tab" data-tab="cocteles">🍤 Cocteles</button>
-                <button class="tab" data-tab="hamburguesas">🍔 Hamburguesas</button>
-                <button class="tab" data-tab="pizzas">🍕 Pizzas</button>
-                <button class="tab" data-tab="bebidas">🍹 Bebidas</button>
-                <button class="tab" data-tab="postres">🍰 Postres</button>
+                <button class="tab active" data-tab="camarones">Camarones</button>
+                <button class="tab" data-tab="mojarras">Mojarras</button>
+                <button class="tab" data-tab="caldos">Caldos</button>
+                <button class="tab" data-tab="cocteles">Cocteles</button>
+                <button class="tab" data-tab="hamburguesas">Hamburguesas</button>
+                <button class="tab" data-tab="pizzas">Pizzas</button>
+                <button class="tab" data-tab="bebidas">Bebidas</button>
+                <button class="tab" data-tab="postres">Postres</button>
             </div>
 
             <!-- CAMARONES -->
@@ -144,7 +196,7 @@
                     <div class="menu-item"><h3>Camarones Mango Habanero</h3><span class="price">$220</span></div>
                     <div class="menu-item"><h3>Camarones BBQ</h3><span class="price">$220</span></div>
                     <div class="menu-item"><h3>Camarones Enchipotlados</h3><span class="price">$210</span></div>
-                    <div class="menu-item"><h3>Camarones al Tempura <small>(con aderezo)</small></h3><span class="price">$220</span></div>
+                    <div class="menu-item"><h3>Camarones al Tempura <small>con aderezo</small></h3><span class="price">$220</span></div>
                     <div class="menu-item"><h3>Camarones al Ajillo</h3><span class="price">$210</span></div>
                     <div class="menu-item"><h3>Camarones Piña Coco</h3><span class="price">$220</span></div>
                     <div class="menu-item"><h3>Camarones Chiltepín</h3><span class="price">$210</span></div>
@@ -168,13 +220,13 @@
             <!-- CALDOS -->
             <div class="menu-content" id="caldos">
                 <div class="menu-grid">
-                    <div class="menu-item with-sizes"><h3>Sudador de Tarro <small>(Picoso)</small></h3><div class="sizes"><span>GDE $140</span></div></div>
-                    <div class="menu-item with-sizes"><h3>Caldo de Mariscos <small>(Almeja, Pulpo, Calamar, Pescado, Jaiba, Camarón, Surimi)</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Sudador de Tarro <small>Picoso</small></h3><div class="sizes"><span>GDE $140</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Caldo de Mariscos <small>Almeja, Pulpo, Calamar, Pescado, Jaiba, Camarón, Surimi</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                     <div class="menu-item with-sizes"><h3>Caldo de Camarón</h3><div class="sizes"><span>GDE $160</span><span>CHICA $130</span></div></div>
-                    <div class="menu-item with-sizes"><h3>Cazuela Marisco "De la Casa Picoso"</h3><div class="sizes"><span>GDE $175</span><span>CHICA $135</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Cazuela Marisco "De la Casa"</h3><div class="sizes"><span>GDE $175</span><span>CHICA $135</span></div></div>
                     <div class="menu-item with-sizes"><h3>Caldo de Pescado</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                     <div class="menu-item with-sizes"><h3>Pozole de Mariscos</h3><div class="sizes"><span>GDE $170</span><span>CHICA $130</span></div></div>
-                    <div class="menu-item with-sizes"><h3>Cazuela Hawaiana <small>(Piña, tocino, queso)</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
+                    <div class="menu-item with-sizes"><h3>Cazuela Hawaiana <small>Piña, tocino, queso</small></h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                     <div class="menu-item with-sizes"><h3>Caldo de Camarón y Pulpo</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                     <div class="menu-item with-sizes"><h3>Caldo de Camarón Jaiba</h3><div class="sizes"><span>GDE $160</span><span>CHICA $120</span></div></div>
                 </div>
@@ -235,13 +287,13 @@
 
                 <h3 class="menu-subtitle">Micheladas</h3>
                 <div class="menu-grid">
-                    <div class="menu-item"><h3>Michelada 1 Litro Cam. y Pulp.</h3><span class="price">$165</span></div>
-                    <div class="menu-item"><h3>Michelada 1 Litro Sencilla</h3><span class="price">$145</span></div>
-                    <div class="menu-item"><h3>Michelada 1/2 Litro Cam. Pulpo</h3><span class="price">$115</span></div>
-                    <div class="menu-item"><h3>Michelada 1/2 Litro Sencilla</h3><span class="price">$95</span></div>
-                    <div class="menu-item"><h3>Michelada 1 Litro Mango</h3><span class="price">$165</span></div>
-                    <div class="menu-item"><h3>Submarino Shot de Tequila + Cerveza</h3><span class="price">$90</span></div>
-                    <div class="menu-item"><h3>Michelada Completa Cam. y Pulpo y Botana</h3><span class="price">$215</span></div>
+                    <div class="menu-item"><h3>Michelada 1 L Cam. y Pulpo</h3><span class="price">$165</span></div>
+                    <div class="menu-item"><h3>Michelada 1 L Sencilla</h3><span class="price">$145</span></div>
+                    <div class="menu-item"><h3>Michelada 1/2 L Cam. Pulpo</h3><span class="price">$115</span></div>
+                    <div class="menu-item"><h3>Michelada 1/2 L Sencilla</h3><span class="price">$95</span></div>
+                    <div class="menu-item"><h3>Michelada 1 L Mango</h3><span class="price">$165</span></div>
+                    <div class="menu-item"><h3>Submarino Tequila + Cerveza</h3><span class="price">$90</span></div>
+                    <div class="menu-item"><h3>Michelada Completa + Botana</h3><span class="price">$215</span></div>
                     <div class="menu-item"><h3>Cahuama con Sal y Limón</h3><span class="price">$105</span></div>
                     <div class="menu-item"><h3>Cerveza de Medio</h3><span class="price">$55</span></div>
                 </div>
@@ -252,7 +304,7 @@
                     <div class="menu-item"><h3>Café con Leche</h3><span class="price">$65</span></div>
                     <div class="menu-item"><h3>Agua p/ Café o Té</h3><span class="price">$35</span></div>
                     <div class="menu-item"><h3>Leche de Fresa</h3><span class="price">$60</span></div>
-                    <div class="menu-item"><h3>Cohocolate Caliente con Vino</h3><span class="price">$90</span></div>
+                    <div class="menu-item"><h3>Chocolate Caliente con Vino</h3><span class="price">$90</span></div>
                 </div>
 
                 <h3 class="menu-subtitle">Bebidas Frías</h3>
@@ -286,7 +338,7 @@
                     <div class="menu-item"><h3>Waffles con Rompope y Chantillín</h3><span class="price">$85</span></div>
                     <div class="menu-item"><h3>Helado Frito</h3><span class="price">$45</span></div>
                     <div class="menu-item"><h3>Rol de Canela Tres Leches</h3><span class="price">$45</span></div>
-                    <div class="menu-item"><h3>Duraznos con Cremao o/u Rompope</h3><span class="price">$85</span></div>
+                    <div class="menu-item"><h3>Duraznos con Crema o Rompope</h3><span class="price">$85</span></div>
                     <div class="menu-item"><h3>Duraznos Flameados y Rompope</h3><span class="price">$100</span></div>
                 </div>
             </div>
@@ -294,87 +346,142 @@
     </section>
 
     <!-- ===== PARALLAX 2 ===== -->
-    <section class="parallax-section parallax-2" style="background-image: url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=1920');">
+    <section class="parallax" style="background-image: url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=1920&q=80');">
         <div class="parallax-overlay"></div>
         <div class="parallax-content">
-            <h2>"Sabor que te hace volver a la vida"</h2>
-            <p>Cocteles · Micheladas · Ambiente familiar</p>
+            <p class="eyebrow light">· La experiencia ·</p>
+            <h2 class="parallax-title">"Sabor que te hace<br><em class="italic">volver a la vida</em>."</h2>
+            <div class="parallax-line"></div>
         </div>
     </section>
 
     <!-- ===== GALERÍA ===== -->
-    <section class="gallery" id="galeria">
+    <section class="galeria" id="galeria">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Galería</span>
-                <h2>Nuestros platillos</h2>
-                <p>Una muestra de lo que encontrarás en Mr. Ma-Rez</p>
+            <div class="menu-header">
+                <p class="eyebrow center">· Galería ·</p>
+                <h2 class="section-title center">Nuestros <em class="italic">platillos</em></h2>
+                <p class="menu-sub">Una muestra de lo que encontrarás en Mr. Ma-Rez</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item large"><img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=800" alt="Camarones" loading="lazy"><div class="overlay"><span>Camarones</span></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=600" alt="Coctel" loading="lazy"><div class="overlay"><span>Cocteles</span></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600" alt="Mariscos" loading="lazy"><div class="overlay"><span>Mariscos</span></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600" alt="Caldos" loading="lazy"><div class="overlay"><span>Caldos</span></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600" alt="Micheladas" loading="lazy"><div class="overlay"><span>Micheladas</span></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizzas" loading="lazy"><div class="overlay"><span>Pizzas</span></div></div>
+
+            <div class="galeria-grid">
+                <div class="gal-item gal-1">
+                    <img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=1000&q=80" alt="Camarones">
+                    <div class="gal-overlay"><span>Camarones</span></div>
+                </div>
+                <div class="gal-item gal-2">
+                    <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=700&q=80" alt="Cocteles">
+                    <div class="gal-overlay"><span>Cocteles</span></div>
+                </div>
+                <div class="gal-item gal-3">
+                    <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=700&q=80" alt="Caldos">
+                    <div class="gal-overlay"><span>Caldos</span></div>
+                </div>
+                <div class="gal-item gal-4">
+                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=1000&q=80" alt="Micheladas">
+                    <div class="gal-overlay"><span>Micheladas</span></div>
+                </div>
+                <div class="gal-item gal-5">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700&q=80" alt="Pizzas">
+                    <div class="gal-overlay"><span>Pizzas</span></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section class="cta-section">
-        <div class="container cta-inner">
-            <h2>¿Listo para probar el mejor sabor del mar?</h2>
-            <p>Reserva tu mesa hoy y vive la experiencia Mr. Ma-Rez</p>
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="testimonios">
+        <div class="container">
+            <div class="menu-header">
+                <p class="eyebrow center">· Testimonios ·</p>
+                <h2 class="section-title center">Lo que dicen <em class="italic">nuestros clientes</em></h2>
+            </div>
+
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Los mejores camarones a la diabla que he probado. El sabor picante es perfecto y el servicio excelente. Ya somos clientes fieles."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">MG</div>
+                        <div><strong>María González</strong><span>Cliente frecuente</span></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Las micheladas son legendarias y los caldos te devuelven el alma. Ambiente familiar, precios justos y sabor inigualable."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">CM</div>
+                        <div><strong>Carlos Mendoza</strong><span>Visitante</span></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Vine por recomendación y no me arrepiento. Los cocteles de camarón son enormes, frescos y deliciosos. 100% recomendado."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">AT</div>
+                        <div><strong>Ana Torres</strong><span>Primera visita</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final">
+        <div class="cta-final-bg"></div>
+        <div class="cta-final-content">
+            <p class="eyebrow light center">· Reserva ahora ·</p>
+            <h2>¿Listo para probar<br>el <em class="italic">auténtico sabor del mar</em>?</h2>
+            <p>Te esperamos con la mejor atención y los mariscos más frescos de la ciudad.</p>
             <div class="cta-buttons">
                 <a href="tel:+525500000000" class="btn btn-primary">📞 Llamar ahora</a>
-                <a href="#menu" class="btn btn-outline">🍽️ Ver Menú</a>
+                <a href="https://wa.me/525500000000" target="_blank" rel="noopener" class="btn btn-outline">💬 WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACTO / FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer" id="contacto">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="imagenes/logo.png" alt="Mr. Ma-Rez" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <h3 class="footer-logo-text" style="display:none;">Mr. Ma-Rez Mariscos</h3>
+                <div class="footer-col footer-brand">
+                    <img src="imagenes/logo.png" alt="Mr. Ma-Rez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h3 class="footer-brand-text" style="display:none;">Mr. Ma-Rez</h3>
                     <p>Tradición, sabor y frescura del mar en cada platillo. Te esperamos con la mejor atención.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="WhatsApp">💬</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                        <a href="#" aria-label="WhatsApp">wa</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <p>📍 Tu dirección aquí</p>
                     <p>📞 (XXX) XXX-XXXX</p>
-                    <p>✉️ contacto@mrmarez.com</p>
+                    <p>✉️ hola@mrmarez.com</p>
                 </div>
                 <div class="footer-col">
                     <h4>Horario</h4>
                     <p>Lunes a Domingo</p>
-                    <p>9:00 AM - 10:00 PM</p>
-                    <p><strong>Desayunos:</strong> 9:00 AM - 12:00 PM</p>
+                    <p>9:00 AM – 10:00 PM</p>
+                    <p>Desayunos 9:00 – 12:00</p>
                 </div>
                 <div class="footer-col">
                     <h4>Síguenos</h4>
-                    <p>📱 Mr_Marez_Mx</p>
-                    <p>📘 Mr. Marez</p>
+                    <p>@Mr_Marez_Mx</p>
+                    <p>Mr. Marez Mariscos</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Mr. Ma-Rez Mariscos. Todos los derechos reservados.</p>
-                <p class="payments">💳 Aceptamos pagos con tarjeta + comisión del 4%</p>
+                <p>© 2026 Mr. Ma-Rez Mariscos · Todos los derechos reservados</p>
+                <p class="footer-pay">💳 Aceptamos tarjeta + comisión del 4%</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp flotante -->
     <a href="https://wa.me/525500000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        💬
+        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </a>
 
     <!-- Botón volver arriba -->
