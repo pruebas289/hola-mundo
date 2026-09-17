@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a3d62">
     <title>Mr. Ma-Rez | Mariscos Frescos · Sabor del Mar</title>
     <meta name="description" content="Los mejores mariscos frescos: camarones, caldos, cocteles, mojarras y más. Mr. Ma-Rez Mariscos.">
     <link rel="icon" type="image/png" href="imagenes/logo.png">
@@ -30,6 +31,9 @@
         </div>
     </div>
 
+    <!-- ===== OVERLAY MENÚ MÓVIL ===== -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -44,7 +48,7 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <a href="#contacto" class="nav-cta">Reservar</a>
-            <div class="nav-toggle" id="navToggle" aria-label="Menú">
+            <div class="nav-toggle" id="navToggle" aria-label="Abrir menú" role="button" tabindex="0">
                 <span></span><span></span><span></span>
             </div>
         </div>

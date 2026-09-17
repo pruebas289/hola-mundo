@@ -6,11 +6,10 @@ window.addEventListener('load', () => {
     }
 });
 
-// ===== NAVBAR SCROLL =====
+// ===== NAVBAR + BACK TO TOP =====
 const navbar = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
 
-let lastScrollY = 0;
 let ticking = false;
 
 function handleScroll() {
@@ -18,13 +17,13 @@ function handleScroll() {
 
     if (scrollY > 60) {
         navbar.classList.add('scrolled');
-        backToTop.classList.add('show');
+        if (backToTop) backToTop.classList.add('show');
     } else {
         navbar.classList.remove('scrolled');
-        backToTop.classList.remove('show');
+        if (backToTop) backToTop.classList.remove('show');
     }
 
-    // Parallax suave en hero (solo si no es móvil)
+    // Parallax suave solo en desktop
     if (window.innerWidth > 768) {
         const heroContent = document.querySelector('.hero-content');
         if (heroContent && scrollY < window.innerHeight) {
@@ -33,7 +32,6 @@ function handleScroll() {
         }
     }
 
-    lastScrollY = scrollY;
     ticking = false;
 }
 
@@ -44,44 +42,51 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// ===== MENÚ MÓVIL =====
+// ===== MENÚ MÓVIL (CON OVERLAY) =====
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
+const navOverlay = document.getElementById('navOverlay');
+
+function openMenu() {
+    navToggle.classList.add('active');
+    navMenu.classList.add('active');
+    if (navOverlay) navOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+}
+
+function closeMenu() {
+    navToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+}
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        if (navMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
     // Cerrar al hacer clic en un enlace
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
         });
     });
 
-    // Cerrar al hacer clic fuera
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') &&
-            !navMenu.contains(e.target) &&
-            !navToggle.contains(e.target)) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+    // Cerrar al hacer clic en el overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMenu);
+    }
 
     // Cerrar con tecla Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
         }
     });
 }
@@ -103,18 +108,6 @@ tabs.forEach(tab => {
             targetContent.classList.add('active');
         }
 
-        // En móvil, hacer scroll suave hacia el contenido del menú
-        if (window.innerWidth <= 768) {
-            const menuSection = document.getElementById('menu');
-            if (menuSection) {
-                const offsetTop = menuSection.offsetTop - 80;
-                if (window.scrollY > offsetTop + 200) {
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                }
-            }
-        }
-
-        // Centrar el tab clickeado en la barra horizontal
         tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     });
 });
@@ -123,32 +116,6 @@ tabs.forEach(tab => {
 if (backToTop) {
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-// ===== ANIMACIONES AL SCROLL (con IntersectionObserver) =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -30px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Aplicar animación a elementos (solo si no es móvil muy pequeño)
-if (window.innerWidth > 480) {
-    document.querySelectorAll('.menu-item, .gallery-item, .feature, .stat').forEach((el, i) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(25px)';
-        el.style.transition = `opacity 0.6s ease ${i * 0.02}s, transform 0.6s ease ${i * 0.02}s`;
-        observer.observe(el);
     });
 }
 
@@ -167,28 +134,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== DETECTAR ORIENTACIÓN Y RESIZE =====
+// ===== RESIZE =====
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        // Cerrar menú móvil si cambia a desktop
         if (window.innerWidth > 768 && navMenu && navMenu.classList.contains('active')) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
         }
     }, 250);
 });
 
-// ===== PREVENIR ZOOM EN DOBLE TAP EN iOS =====
-let lastTouchEnd = 0;
-document.addEventListener('touchend', (e) => {
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) {
-        e.preventDefault();
-    }
-    lastTouchEnd = now;
-}, { passive: false });
-
-console.log('🦐 Mr. Ma-Rez Mariscos - Responsive cargado correctamente');
+console.log('🦐 Mr. Ma-Rez Mariscos - Cargado correctamente');
